@@ -55,40 +55,43 @@ class WesternConf extends Component {
    columns: [
    {
      Header: '',
-     accessor: 'rank'
+     accessor: 'rank',
+     maxWidth: 30
    },
    {
     Header: '',
     accessor: 'img',
-    Cell: props => <img className="logo" src={props.value} />
+    Cell: props => <img className="logo" src={props.value} />,
+    maxWidth: 70
    },
    {
      Header: '',
      accessor: 'fullName',
-     Cell: props => <span className='teamName'>{props.value}</span>
+     Cell: props => <span className='teamName'>{props.value}</span>,
+     maxWidth: 200
    },
    {
      Header: 'Wins',
-     accessor: 'win'
+     accessor: 'win',
    },
    {
      Header: 'Losses',
-     accessor: 'loss'
+     accessor: 'loss',
    },
    {
      Header: 'Pct',
-     accessor: 'winPct'
+     accessor: 'winPct',
    },
    {
      Header: 'GB',
-     accessor: 'gamesBehind'
+     accessor: 'gamesBehind',
    }
  ]
 }
 ]
 
     return (
-      <div>
+      <div className="table">
         <ReactTable
           data={data}
           columns={columns}

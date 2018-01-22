@@ -40,6 +40,7 @@ import {
   Switch
 } from "react-router-dom"
 import Home from './Home'
+import TeamProfile from './TeamProfile'
 
 
 class App extends Component {
@@ -50,7 +51,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     var allTeams =
       [
         {
@@ -497,6 +498,13 @@ class App extends Component {
             render={(props) => {
               return (
                 <WesternConf teams={this.state.teams} />
+              )
+            }}
+            />
+            <Route path='/teamprofile/:teamName'
+            render={(props) => {
+              return (
+                <TeamProfile {...props} teams={this.state.teams}/>
               )
             }}
             />

@@ -6,6 +6,13 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import { ReactTableDefaults } from 'react-table'
 import MomentTimezone from 'moment-timezone'
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Redirect,
+  Switch
+} from "react-router-dom"
 
 Object.assign(ReactTableDefaults, {
   showPagination: false
@@ -55,17 +62,20 @@ class EasternConf extends Component {
    columns: [
    {
      Header: '',
-     accessor: 'rank'
+     accessor: 'rank',
+     maxWidth: 30
    },
    {
     Header: '',
     accessor: 'img',
-    Cell: props => <img className="logo" src={props.value} />
+    Cell: props => <img className="logo" src={props.value} />,
+    maxWidth: 70
    },
    {
      Header: '',
      accessor: 'fullName',
-     Cell: props => <span className='teamName'>{props.value}</span>
+     Cell: props => <Link to={`/teamprofile/${props.value}`}><span className='teamName'>{props.value}</span></Link>,
+     maxWidth: 200
    },
    {
      Header: 'Wins',
