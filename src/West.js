@@ -5,6 +5,7 @@ import moment from 'moment'
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import { ReactTableDefaults } from 'react-table'
+import MomentTimezone from 'moment-timezone'
 
 Object.assign(ReactTableDefaults, {
   showPagination: false
@@ -20,7 +21,7 @@ class WesternConf extends Component {
 
   componentDidMount(){
     var date = new Date()
-    var formattedDate = moment(date).format('YYYYMMDD')
+    var formattedDate = moment(date).tz("America/Los_Angeles").format('YYYYMMDD')
     $.ajax({
         type: 'get',
         url: `https://calm-dawn-83504.herokuapp.com/http://data.nba.net/data/10s/prod/v1/${formattedDate}/standings_conference.json`,
