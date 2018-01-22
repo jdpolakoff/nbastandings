@@ -10,7 +10,7 @@ Object.assign(ReactTableDefaults, {
   showPagination: false
 })
 
-class EasternConf extends Component {
+class WesternConf extends Component {
   constructor(){
     super()
     this.state = {
@@ -26,19 +26,19 @@ class EasternConf extends Component {
         url: `https://calm-dawn-83504.herokuapp.com/http://data.nba.net/data/10s/prod/v1/${formattedDate}/standings_conference.json`,
         dataType: 'json'
     }).done((response) => {
-        var eastTeams = response.league.standard.conference.east
+        var westTeams = response.league.standard.conference.west
         var x
         var z
-        for (x = 0; x < eastTeams.length; x++){
+        for (x = 0; x < westTeams.length; x++){
           for (z = 0; z < this.props.teams.length; z++){
-            if (eastTeams[x].teamId === this.props.teams[z].teamId){
-              eastTeams[x]['fullName'] = this.props.teams[z].fullName
-              eastTeams[x]['img'] = this.props.teams[z].img
+            if (westTeams[x].teamId === this.props.teams[z].teamId){
+              westTeams[x]['fullName'] = this.props.teams[z].fullName
+              westTeams[x]['img'] = this.props.teams[z].img
             }
           }
         }
 
-        this.setState({teams: eastTeams}, function(){
+        this.setState({teams: westTeams}, function(){
           console.log(this.state.teams)
         })
   })
@@ -49,7 +49,7 @@ class EasternConf extends Component {
 
   const columns = [
   {
-   Header: props => <span>Eastern Conference Standings</span>,
+   Header: props => <span>Western Conference Standings</span>,
    columns: [
    {
     Header: '',
@@ -93,4 +93,4 @@ class EasternConf extends Component {
   }
 }
 
-export default EasternConf;
+export default WesternConf;
