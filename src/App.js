@@ -32,6 +32,14 @@ import thunder from './images/thunder.jpg'
 import twolves from './images/twolves.jpg'
 import warriors from './images/warriors.jpg'
 import wizards from './images/wizards.jpg'
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Redirect,
+  Switch
+} from "react-router-dom"
+import Home from './Home'
 
 
 class App extends Component {
@@ -474,10 +482,26 @@ class App extends Component {
   render() {
 
     return (
-      <div>
-        <EasternConf teams={this.state.teams}/>
-        <WesternConf teams={this.state.teams}/>
-      </div>
+        <div>
+          <Switch>
+            <Route exact path='/'
+            component={Home} />
+            <Route exact path='/easternconfstandings'
+            render={(props) => {
+              return (
+                <EasternConf teams={this.state.teams} />
+              )
+            }}
+            />
+            <Route exact path='/westernconfstandings'
+            render={(props) => {
+              return (
+                <WesternConf teams={this.state.teams} />
+              )
+            }}
+            />
+          </Switch>
+        </div>
     );
   }
 }

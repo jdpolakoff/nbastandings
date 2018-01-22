@@ -35,6 +35,7 @@ class EasternConf extends Component {
             if (eastTeams[x].teamId === this.props.teams[z].teamId){
               eastTeams[x]['fullName'] = this.props.teams[z].fullName
               eastTeams[x]['img'] = this.props.teams[z].img
+              eastTeams[x]['rank'] = x + 1
             }
           }
         }
@@ -53,12 +54,16 @@ class EasternConf extends Component {
    Header: props => <span>Eastern Conference Standings</span>,
    columns: [
    {
+     Header: '',
+     accessor: 'rank'
+   },
+   {
     Header: '',
     accessor: 'img',
     Cell: props => <img className="logo" src={props.value} />
    },
    {
-     Header: 'Team',
+     Header: '',
      accessor: 'fullName',
      Cell: props => <span className='teamName'>{props.value}</span>
    },
@@ -88,6 +93,7 @@ class EasternConf extends Component {
           data={data}
           columns={columns}
           defaultPageSize={15}
+          className="-striped -highlight"
         />
       </div>
     );

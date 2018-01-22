@@ -35,6 +35,7 @@ class WesternConf extends Component {
             if (westTeams[x].teamId === this.props.teams[z].teamId){
               westTeams[x]['fullName'] = this.props.teams[z].fullName
               westTeams[x]['img'] = this.props.teams[z].img
+              westTeams[x]['rank'] = x + 1
             }
           }
         }
@@ -53,12 +54,16 @@ class WesternConf extends Component {
    Header: props => <span>Western Conference Standings</span>,
    columns: [
    {
+     Header: '',
+     accessor: 'rank'
+   },
+   {
     Header: '',
     accessor: 'img',
     Cell: props => <img className="logo" src={props.value} />
    },
    {
-     Header: 'Team',
+     Header: '',
      accessor: 'fullName',
      Cell: props => <span className='teamName'>{props.value}</span>
    },
@@ -88,6 +93,7 @@ class WesternConf extends Component {
           data={data}
           columns={columns}
           defaultPageSize={15}
+          className="-striped -highlight"
         />
       </div>
     );
