@@ -6,6 +6,13 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import { ReactTableDefaults } from 'react-table'
 import MomentTimezone from 'moment-timezone'
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Redirect,
+  Switch
+} from "react-router-dom"
 
 Object.assign(ReactTableDefaults, {
   showPagination: false
@@ -67,7 +74,7 @@ class WesternConf extends Component {
    {
      Header: '',
      accessor: 'fullName',
-     Cell: props => <span className='teamName'>{props.value}</span>,
+     Cell: props => <Link to={`/teamprofile/${props.value}`}><span className='teamName'>{props.value}</span></Link>,
      maxWidth: 200
    },
    {

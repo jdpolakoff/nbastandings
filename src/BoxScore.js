@@ -11,6 +11,8 @@ import $ from 'jquery'
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import { ReactTableDefaults } from 'react-table'
+import moment from 'moment'
+
 
 Object.assign(ReactTableDefaults, {
   showPagination: false
@@ -22,7 +24,8 @@ class BoxScore extends Component {
     this.state = {
       selectedGame: {},
       homeTeam: {},
-      awayTeam: {}
+      awayTeam: {},
+      formatted: {}
     }
   }
 
@@ -60,21 +63,32 @@ class BoxScore extends Component {
   render() {
 
     if (!$.isEmptyObject(this.state.homeTeam) && !$.isEmptyObject(this.state.awayTeam) && !$.isEmptyObject(this.state.selectedGame)) {
-    return <div className="matchup">
-      <div>
-        <h2>{this.state.awayTeam.fullName}</h2>
-        <img src={this.state.awayTeam.img} />
-        <h1>{this.state.selectedGame.basicGameData.vTeam.score}</h1>
+    return (
+    <div>
+      <div className="matchup">
+        <div>
+          <h2>{this.state.awayTeam.fullName}<br/>{`(${this.state.selectedGame.basicGameData.vTeam.win}-${this.state.selectedGame.basicGameData.vTeam.loss})`}</h2>
+          <img src={this.state.awayTeam.img} />
+          <h1>{this.state.selectedGame.basicGameData.vTeam.score}</h1>
+        </div>
+        <div className="at"><h2>at</h2></div>
+        <div>
+          <h2>{this.state.homeTeam.fullName}<br/>{`(${this.state.selectedGame.basicGameData.hTeam.win}-${this.state.selectedGame.basicGameData.hTeam.loss})`}</h2>
+          <img src={this.state.homeTeam.img} />
+          <h1>{this.state.selectedGame.basicGameData.hTeam.score}</h1>
+        </div>
       </div>
-      <div><h1>at</h1></div>
-      <div>
-        <h2>{this.state.homeTeam.fullName}</h2>
-        <img src={this.state.homeTeam.img} />
-        <h1>{this.state.selectedGame.basicGameData.hTeam.score}</h1>
-      </div>
+        <div className="synopsis">
+          <h1>Just the facts:</h1>
+          <h2>Game was at {this.state.selectedGame.basicGameData.arena.name} on {moment(this.state.selectedGame.basicGameData.startTimeUTC).format('MM/DD/YYYY')}</h2>
+          <h2>{this.state.selectedGame.basicGameData.nugget.text}</h2>
+          <h2>{this.state.homeTeam.fullName}: {this.state.selectedGame.stats.hTeam.fastBreakPoints} fast-break points, {this.state.selectedGame.stats.hTeam.pointsInPaint} points in the paint, {this.state.selectedGame.stats.hTeam.secondChancePoints} second-chance points, {this.state.selectedGame.stats.hTeam.pointsOffTurnovers} points off turnovers.</h2>
+          <h2>{this.state.awayTeam.fullName}: {this.state.selectedGame.stats.vTeam.fastBreakPoints} fast-break points, {this.state.selectedGame.stats.vTeam.pointsInPaint} points in the paint, {this.state.selectedGame.stats.vTeam.secondChancePoints} second-chance points, {this.state.selectedGame.stats.vTeam.pointsOffTurnovers} points off turnovers.</h2>
+        </div>
     </div>
+  )
   } else {
-    return <div>loading</div>
+    return <div>loading...</div>
   }
  }
 }

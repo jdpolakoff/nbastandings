@@ -14,11 +14,15 @@ class TeamProfile extends Component {
   constructor(props){
     super(props)
     this.state = {
-      games: []
+      games: [],
+      homeTeam: '',
+      awayTeam: '',
     }
   }
 
   componentDidMount(){
+    console.log(this.props.teams)
+
     const team1 = this.props.match.params.teamName
     var selectedTeam = this.props.teams.filter(function(team){
       return team.fullName === team1
@@ -43,19 +47,34 @@ class TeamProfile extends Component {
            }
          }
        }
+
+       for (var z = 0; z < filteredArr.length; z++){
+         for (var o = 0; o < this.props.teams.length; o++){
+           if (filteredArr[z].h.ta === this.props.teams[o].tricode){
+             filteredArr[z].h['img'] = this.props.teams[o].img
+           }
+           if (filteredArr[z].v.ta === this.props.teams[o].tricode){
+             filteredArr[z].v['img'] = this.props.teams[o].img
+           }
+         }
+       }
+
        console.log(filteredArr)
+
        this.setState({games: filteredArr})
     })
-
   }
 
   render() {
 
     var completedGames = this.state.games.map(function(game){
+
+      console.log(game)
       return (
         <Link to={`/gameboxscore/${game.gdte.split('-').join('')}/${game.gid}`}>
         <div key={game.gdte.split('-').join('')}>
-          <p>{game.v.tn} at {game.h.tn}</p>
+          <img className="thumbs" src={game.v.img} /><img className="thumbs" src={game.h.img} />
+          <p>{game.v.tn} at {game.h.tn} {game.gdte.split('-')[1]}/{game.gdte.split('-')[2]}/{game.gdte.split('-')[0]}</p>
         </div>
         </Link>
       )
