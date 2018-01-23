@@ -41,6 +41,7 @@ import {
 } from "react-router-dom"
 import Home from './Home'
 import TeamProfile from './TeamProfile'
+import BoxScore from './BoxScore'
 
 
 class App extends Component {
@@ -505,6 +506,13 @@ class App extends Component {
             render={(props) => {
               return (
                 <TeamProfile {...props} teams={this.state.teams}/>
+              )
+            }}
+            />
+            <Route path='/gameboxscore/:date/:gid'
+            render={(props) => {
+              return (
+                <BoxScore {...props} teams={this.state.teams}/>
               )
             }}
             />
