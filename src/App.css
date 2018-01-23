@@ -18,8 +18,8 @@ body {
   text-align: center
 }
 
-#layout {
-  width: 80%;
+#disqus_thread {
+  width: 60%;
   margin: 0 auto
 }
 
