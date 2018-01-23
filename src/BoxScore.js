@@ -71,7 +71,6 @@ class BoxScore extends Component {
           <img src={this.state.awayTeam.img} />
           <h1>{this.state.selectedGame.basicGameData.vTeam.score}</h1>
         </div>
-        <div className="at"><h2>at</h2></div>
         <div>
           <h2>{this.state.homeTeam.fullName}<br/>{`(${this.state.selectedGame.basicGameData.hTeam.win}-${this.state.selectedGame.basicGameData.hTeam.loss})`}</h2>
           <img src={this.state.homeTeam.img} />

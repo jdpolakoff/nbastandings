@@ -8,6 +8,7 @@ import {
   Switch
 } from "react-router-dom"
 import $ from 'jquery'
+import Milligram from 'milligram'
 
 
 class TeamProfile extends Component {
@@ -41,8 +42,10 @@ class TeamProfile extends Component {
          for (var j = 0; j < response.lscd[i].mscd.g.length; j++){
            if (response.lscd[i].mscd.g[j].h.ta === selectedTeam[0].tricode || response.lscd[i].mscd.g[j].v.ta === selectedTeam[0].tricode) {
              arr.push(response.lscd[i].mscd.g[j])
-             var filteredArr = arr.filter(function(game){
-               return game.stt === 'Final'
+             var filteredArr = arr.filter(function(game, index){
+               if (index > 4) {
+                 return game.stt === 'Final'
+               }
              })
            }
          }
@@ -60,6 +63,7 @@ class TeamProfile extends Component {
        }
 
        console.log(filteredArr)
+       filteredArr = filteredArr.reverse()
 
        this.setState({games: filteredArr})
     })
@@ -68,23 +72,25 @@ class TeamProfile extends Component {
   render() {
 
     var completedGames = this.state.games.map(function(game){
-
-      console.log(game)
       return (
         <Link to={`/gameboxscore/${game.gdte.split('-').join('')}/${game.gid}`}>
-        <div key={game.gdte.split('-').join('')}>
-          <img className="thumbs" src={game.v.img} /><img className="thumbs" src={game.h.img} />
-          <p>{game.v.tn} at {game.h.tn} {game.gdte.split('-')[1]}/{game.gdte.split('-')[2]}/{game.gdte.split('-')[0]}</p>
+        <div className="column card" key={game.gdte.split('-').join('')}>
+          <div className="thumbContain"><img className="thumbs" src={game.v.img} /><img className="thumbs" src={game.h.img} /></div>
+          <p className="gameInfo">{game.v.tn} at {game.h.tn} {game.gdte.split('-')[1]}/{game.gdte.split('-')[2]}/{game.gdte.split('-')[0]}</p>
         </div>
         </Link>
       )
     })
 
     return (
-        <div>
-          Team Profile
+      <div>
+      <h1 className="team">{this.props.match.params.teamName} 2017-2018 games</h1>
+      <div className="container">
+        <div className="columns">
           {completedGames}
         </div>
+      </div>
+      </div>
     );
   }
 }

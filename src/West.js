@@ -58,7 +58,7 @@ class WesternConf extends Component {
 
   const columns = [
   {
-   Header: props => <span>Western Conference Standings</span>,
+   Header: props => <span className="conf">Western Conference Standings</span>,
    columns: [
    {
      Header: '',

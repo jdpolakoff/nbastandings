@@ -58,7 +58,7 @@ class EasternConf extends Component {
 
   const columns = [
   {
-   Header: props => <span>Eastern Conference Standings</span>,
+   Header: props => <span className="conf">Eastern Conference Standings</span>,
    columns: [
    {
      Header: '',
@@ -86,11 +86,11 @@ class EasternConf extends Component {
      accessor: 'loss'
    },
    {
-     Header: 'Pct',
+     Header: 'Win Pct',
      accessor: 'winPct'
    },
    {
-     Header: 'GB',
+     Header: 'Games Back',
      accessor: 'gamesBehind'
    }
  ]
