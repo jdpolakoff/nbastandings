@@ -97,11 +97,7 @@ class TeamProfile extends Component {
       </div>
       <ReactDisqusComments
        shortname="smackboards"
-       identifier={this.props.match.params.teamName}
-       title={this.props.match.params.teamName}
-       // url={`https://smackboards.herokuapp.com/${this.props.match.params.teamName}`}
-       category_id="123456"
-       onNewComment={this.handleNewComment}/>
+       />
       </div>
     )
   }
