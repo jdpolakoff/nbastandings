@@ -97,6 +97,7 @@ class TeamProfile extends Component {
       </div>
       <ReactDisqusComments
        shortname="smackboards"
+       identifier="2345679"
        />
       </div>
     )
