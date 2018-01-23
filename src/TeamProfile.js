@@ -9,6 +9,7 @@ import {
 } from "react-router-dom"
 import $ from 'jquery'
 import Milligram from 'milligram'
+import ReactDisqusComments from 'react-disqus-comments'
 
 
 class TeamProfile extends Component {
@@ -18,12 +19,13 @@ class TeamProfile extends Component {
       games: [],
       homeTeam: '',
       awayTeam: '',
+      pageUrl: ''
     }
   }
 
   componentDidMount(){
-    console.log(this.props.teams)
-
+    this.setState({pageUrl: `localhost:3000/${this.props.match.params.teamName}`})
+    console.log(this.props)
     const team1 = this.props.match.params.teamName
     var selectedTeam = this.props.teams.filter(function(team){
       return team.fullName === team1
@@ -69,6 +71,10 @@ class TeamProfile extends Component {
     })
   }
 
+  handleNewComment(comment) {
+  console.log(comment.text);
+  }
+
   render() {
 
     var completedGames = this.state.games.map(function(game){
@@ -81,7 +87,6 @@ class TeamProfile extends Component {
         </Link>
       )
     })
-
     return (
       <div>
       <h1 className="team">{this.props.match.params.teamName} 2017-2018 games</h1>
@@ -90,8 +95,15 @@ class TeamProfile extends Component {
           {completedGames}
         </div>
       </div>
+      <ReactDisqusComments
+       shortname="smackboards"
+       identifier="something-unique-12345"
+       title="Example Thread"
+       url={this.state.pageUrl}
+       category_id="123456"
+       onNewComment={this.handleNewComment}/>
       </div>
-    );
+    )
   }
 }
 

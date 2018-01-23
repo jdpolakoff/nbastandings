@@ -15,7 +15,8 @@ import {
 } from "react-router-dom"
 
 Object.assign(ReactTableDefaults, {
-  showPagination: false
+  showPagination: false,
+  noDataText: 'Loading...'
 })
 
 class WesternConf extends Component {
