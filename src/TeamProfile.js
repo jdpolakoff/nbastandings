@@ -99,7 +99,7 @@ class TeamProfile extends Component {
        shortname="smackboards"
        identifier="something-unique-12345"
        title="Example Thread"
-       url={this.state.pageUrl}
+       url='https://smackboards.herokuapp.com/'
        category_id="123456"
        onNewComment={this.handleNewComment}/>
       </div>
