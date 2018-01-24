@@ -69,7 +69,7 @@ class BoxScore extends Component {
     return (
     <div>
       <div className="matchup">
-        <div>
+        <div className="innerMatchup">
           <h2>{this.state.awayTeam.fullName}<br/>{`(${this.state.selectedGame.basicGameData.vTeam.win}-${this.state.selectedGame.basicGameData.vTeam.loss})`}</h2>
           <img src={this.state.awayTeam.img} />
           <h1>{this.state.selectedGame.basicGameData.vTeam.score}</h1>
