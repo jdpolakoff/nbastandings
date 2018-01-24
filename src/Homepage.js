@@ -32,7 +32,7 @@ class Homepage extends Component {
         <div>
           <Home teams={this.props.teams}/>
           <div className="typeWords">
-            <img className="bask" src={Basket} />
+          <img className="bask" src={Basket} />
             <h2 className="words"></h2>
           </div>
         </div>
