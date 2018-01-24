@@ -21,7 +21,7 @@ class Homepage extends Component {
   }
 
   componentDidMount(){
-    typer('.words').line('Get Playoff Standings').pause(600).back('all')
+    typer('.words').line('Get NBA Playoff Standings').pause(600).back('all')
       .line('Look Up Every Game of the NBA Season').pause(600)
         .back('all').line('Talk Smack')
   }
@@ -32,7 +32,7 @@ class Homepage extends Component {
         <div>
           <Home teams={this.props.teams}/>
           <div className="typeWords">
-          <img className="bask" src={Basket} />
+            <img className="bask" src={Basket} />
             <h2 className="words"></h2>
           </div>
         </div>
