@@ -85,22 +85,25 @@ class TeamProfile extends Component {
         </Link>
       )
     })
-    return (
-      <div>
-      <h1 className="team">{this.props.match.params.teamName} 2017-2018 games</h1>
-      <div className="container">
-        <div className="columns">
-          {completedGames}
+    if (this.state.selectedTeamId){
+      return (
+        <div>
+          <h1 className="team">{this.props.match.params.teamName} 2017-2018 games</h1>
+            <div className="container">
+              <div className="columns">
+                {completedGames}
+              </div>
+            </div>
+          <ReactDisqusComments
+            shortname="smackboards"
+            title={this.props.match.params.teamName}
+            identifier={this.generateKey()}
+          />
         </div>
-      </div>
-      <ReactDisqusComments
-				shortname="smackboards"
-        title={this.props.match.params.teamName}
-				identifier={this.generateKey()}
-				/>
-      </div>
-    )
-  }
+      )} else {
+        return <div>loading...</div>
+      }
+    }
 }
 
 export default TeamProfile;
