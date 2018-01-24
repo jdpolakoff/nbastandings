@@ -220,9 +220,26 @@ blockquote {
     .synopsis h2 {
       font-size: 18px
     }
+    .typeWords {
+      display: none
+    }
+    .typeWords2 {
+      display: block;
+      height: 200px;
+      width: 300px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .navigation b {
+      font-size: 22px
+    }
+    .words, .words2 {
+      font-size: 20px
+    }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1100px) {
     .matchup, .synopsis {
         width: 70%;
     }
@@ -260,29 +277,5 @@ blockquote {
     right: 0;
     width: 100%;
     z-index: 1;
-  }
-}
-
-@media only screen and (max-width: 667px) {
-  .typeWords {
-    display: none
-  }
-  .typeWords2 {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 300px;
-    width: 300px;
-    text-align: center;
-    margin: auto;
-  }
-  .bask {
-    height: 150px
-  }
-  .words {
-    font-size: 30px
   }
 }
