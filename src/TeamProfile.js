@@ -85,7 +85,7 @@ class TeamProfile extends Component {
         </Link>
       )
     })
-    if (this.state.selectedTeamId){
+    if (this.state.selectedTeamId && completedGames){
       var url = `https://smackboards.herokuapp.com/teamprofile/${this.props.match.params.teamName}`
       return (
         <div>

@@ -487,7 +487,12 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path='/'
-            component={Home} />
+            render={(props) => {
+              return (
+                <Home teams={this.state.teams} />
+              )
+            }}
+            />
             <Route exact path='/easternconfstandings'
             render={(props) => {
               return (

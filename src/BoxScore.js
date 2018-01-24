@@ -82,11 +82,12 @@ class BoxScore extends Component {
         </div>
       </div>
         <div className="synopsis">
-          <h1>Just the facts:</h1>
-          <h2>Game was at {this.state.selectedGame.basicGameData.arena.name} on {moment(this.state.selectedGame.basicGameData.startTimeUTC).format('MM/DD/YYYY')}</h2>
-          <h2>{this.state.selectedGame.basicGameData.nugget.text}</h2>
-          <h2>{this.state.homeTeam.fullName}: {this.state.selectedGame.stats.hTeam.fastBreakPoints} fast-break points, {this.state.selectedGame.stats.hTeam.pointsInPaint} points in the paint, {this.state.selectedGame.stats.hTeam.secondChancePoints} second-chance points, {this.state.selectedGame.stats.hTeam.pointsOffTurnovers} points off turnovers.</h2>
-          <h2>{this.state.awayTeam.fullName}: {this.state.selectedGame.stats.vTeam.fastBreakPoints} fast-break points, {this.state.selectedGame.stats.vTeam.pointsInPaint} points in the paint, {this.state.selectedGame.stats.vTeam.secondChancePoints} second-chance points, {this.state.selectedGame.stats.vTeam.pointsOffTurnovers} points off turnovers.</h2>
+          <blockquote>
+            <h2>Game was at {this.state.selectedGame.basicGameData.arena.name} on {moment(this.state.selectedGame.basicGameData.startTimeUTC).format('MM/DD/YYYY')}</h2>
+            <h2>{this.state.selectedGame.basicGameData.nugget.text}</h2>
+            <h2>{this.state.homeTeam.fullName}: {this.state.selectedGame.stats.hTeam.fastBreakPoints} fast-break points, {this.state.selectedGame.stats.hTeam.pointsInPaint} points in the paint, {this.state.selectedGame.stats.hTeam.secondChancePoints} second-chance points, {this.state.selectedGame.stats.hTeam.pointsOffTurnovers} points off turnovers.</h2>
+            <h2>{this.state.awayTeam.fullName}: {this.state.selectedGame.stats.vTeam.fastBreakPoints} fast-break points, {this.state.selectedGame.stats.vTeam.pointsInPaint} points in the paint, {this.state.selectedGame.stats.vTeam.secondChancePoints} second-chance points, {this.state.selectedGame.stats.vTeam.pointsOffTurnovers} points off turnovers.</h2>
+          </blockquote>
         </div>
         <ReactDisqusComments
           shortname="nbasmack"
