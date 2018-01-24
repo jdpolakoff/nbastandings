@@ -13,6 +13,7 @@ import {
   Redirect,
   Switch
 } from "react-router-dom"
+import ReactDisqusComments from 'react-disqus-comments'
 
 Object.assign(ReactTableDefaults, {
   showPagination: false,
@@ -105,6 +106,12 @@ class WesternConf extends Component {
           columns={columns}
           defaultPageSize={15}
           className="-striped -highlight"
+        />
+        <ReactDisqusComments
+          shortname="nbasmack"
+          title='Western Conference Standings'
+          identifier='151'
+          url='https://smackboards.herokuapp.com/westernconfstandings'
         />
       </div>
     );
