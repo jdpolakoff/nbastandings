@@ -19,18 +19,18 @@ class TeamProfile extends Component {
       games: [],
       homeTeam: '',
       awayTeam: '',
-      pageUrl: ''
+      selectedTeamId: ''
+      }
     }
-  }
 
   componentDidMount(){
-    this.setState({pageUrl: `localhost:3000/${this.props.match.params.teamName}`})
     console.log(this.props)
     const team1 = this.props.match.params.teamName
     var selectedTeam = this.props.teams.filter(function(team){
       return team.fullName === team1
     })
     var teamId = selectedTeam[0].teamId
+    this.setState({selectedTeamId: teamId})
     var url = `https://calm-dawn-83504.herokuapp.com/http://data.nba.com/data/10s/v2015/json/mobile_teams/nba/2017/league/00_full_schedule.json`
 
     $.ajax({
@@ -66,17 +66,15 @@ class TeamProfile extends Component {
 
        console.log(filteredArr)
        filteredArr = filteredArr.reverse()
-
        this.setState({games: filteredArr})
     })
   }
 
-  handleNewComment(comment) {
-  console.log(comment.text);
-  }
+  generateKey() {
+   console.log(this.state.selectedTeamId)
+ }
 
   render() {
-
     var completedGames = this.state.games.map(function(game){
       return (
         <Link to={`/gameboxscore/${game.gdte.split('-').join('')}/${game.gid}`}>
@@ -96,9 +94,9 @@ class TeamProfile extends Component {
         </div>
       </div>
       <ReactDisqusComments
-       shortname="smackboards"
-       identifier="2345679"
-       />
+				shortname="smackboards"
+				identifier={this.generateKey()}
+				/>
       </div>
     )
   }
