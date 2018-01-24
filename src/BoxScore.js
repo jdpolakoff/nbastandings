@@ -12,6 +12,7 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import { ReactTableDefaults } from 'react-table'
 import moment from 'moment'
+import ReactDisqusComments from 'react-disqus-comments'
 
 
 Object.assign(ReactTableDefaults, {
@@ -63,6 +64,9 @@ class BoxScore extends Component {
   render() {
 
     if (!$.isEmptyObject(this.state.homeTeam) && !$.isEmptyObject(this.state.awayTeam) && !$.isEmptyObject(this.state.selectedGame)) {
+      var uniqueId = this.state.selectedGame.basicGameData.gameId
+      var url = `https://smackboards.herokuapp.com/gameboxscore/${this.props.match.params.date}/${this.props.match.params.gid}`
+      var matchup = `${this.state.awayTeam.fullName} vs. ${this.state.homeTeam.fullName}`
     return (
     <div>
       <div className="matchup">
@@ -84,6 +88,12 @@ class BoxScore extends Component {
           <h2>{this.state.homeTeam.fullName}: {this.state.selectedGame.stats.hTeam.fastBreakPoints} fast-break points, {this.state.selectedGame.stats.hTeam.pointsInPaint} points in the paint, {this.state.selectedGame.stats.hTeam.secondChancePoints} second-chance points, {this.state.selectedGame.stats.hTeam.pointsOffTurnovers} points off turnovers.</h2>
           <h2>{this.state.awayTeam.fullName}: {this.state.selectedGame.stats.vTeam.fastBreakPoints} fast-break points, {this.state.selectedGame.stats.vTeam.pointsInPaint} points in the paint, {this.state.selectedGame.stats.vTeam.secondChancePoints} second-chance points, {this.state.selectedGame.stats.vTeam.pointsOffTurnovers} points off turnovers.</h2>
         </div>
+        <ReactDisqusComments
+          shortname="nbasmack"
+          title={matchup}
+          identifier={uniqueId}
+          url={url}
+        />
     </div>
   )
   } else {
