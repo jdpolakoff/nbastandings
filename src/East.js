@@ -14,6 +14,7 @@ import {
   Switch
 } from "react-router-dom"
 import ReactDisqusComments from 'react-disqus-comments'
+import Home from './Home'
 
 
 Object.assign(ReactTableDefaults, {
@@ -102,6 +103,7 @@ class EasternConf extends Component {
 
     return (
       <div>
+        <Home teams={this.props.teams}/>
         <ReactTable
           data={data}
           columns={columns}

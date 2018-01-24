@@ -13,6 +13,7 @@ import 'react-table/react-table.css'
 import { ReactTableDefaults } from 'react-table'
 import moment from 'moment'
 import ReactDisqusComments from 'react-disqus-comments'
+import Home from './Home'
 
 Object.assign(ReactTableDefaults, {
   showPagination: false
@@ -68,6 +69,7 @@ class BoxScore extends Component {
       var matchup = `${this.state.awayTeam.fullName} vs. ${this.state.homeTeam.fullName}`
     return (
     <div>
+    <Home teams={this.props.teams}/>
       <div className="matchup">
         <div>
           <h2>{this.state.awayTeam.fullName}<br/>{`(${this.state.selectedGame.basicGameData.vTeam.win}-${this.state.selectedGame.basicGameData.vTeam.loss})`}</h2>

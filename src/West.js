@@ -14,6 +14,7 @@ import {
   Switch
 } from "react-router-dom"
 import ReactDisqusComments from 'react-disqus-comments'
+import Home from './Home.js'
 
 Object.assign(ReactTableDefaults, {
   showPagination: false,
@@ -101,6 +102,7 @@ class WesternConf extends Component {
 
     return (
       <div className="table">
+      <Home teams={this.props.teams}/>
         <ReactTable
           data={data}
           columns={columns}

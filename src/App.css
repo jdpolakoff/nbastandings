@@ -3,7 +3,9 @@ body {
 }
 
 .ReactTable {
-  font-size: 20px
+  font-size: 20px;
+  margin-top: 5.2rem;
+
 }
 
 .rt-resizable-header-content {
@@ -21,6 +23,14 @@ body {
 #disqus_thread {
   width: 60%;
   margin: 0 auto
+}
+
+#teams:hover {
+  cursor: pointer
+}
+
+.team {
+  margin-top: 5.2rem;
 }
 
 .card {
@@ -49,6 +59,7 @@ body {
   justify-content: space-around;
   text-align: center;
   margin: 0 auto;
+  margin-top: 5.5rem;
 }
 
 .matchup img {

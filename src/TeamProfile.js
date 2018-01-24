@@ -10,6 +10,7 @@ import {
 import $ from 'jquery'
 import Milligram from 'milligram'
 import ReactDisqusComments from 'react-disqus-comments'
+import Home from './Home.js'
 
 
 class TeamProfile extends Component {
@@ -89,6 +90,7 @@ class TeamProfile extends Component {
       var url = `https://smackboards.herokuapp.com/teamprofile/${this.props.match.params.teamName}`
       return (
         <div>
+        <Home teams={this.props.teams}/>
           <h1 className="team">{this.props.match.params.teamName} 2017-2018 games</h1>
             <div className="container">
               <div className="columns">
