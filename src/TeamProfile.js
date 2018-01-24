@@ -86,6 +86,7 @@ class TeamProfile extends Component {
       )
     })
     if (this.state.selectedTeamId){
+      var url = `https://smackboards.herokuapp.com/teamprofile/${this.props.match.params.teamName}`
       return (
         <div>
           <h1 className="team">{this.props.match.params.teamName} 2017-2018 games</h1>
@@ -98,6 +99,7 @@ class TeamProfile extends Component {
             shortname="nbasmack"
             title={this.props.match.params.teamName}
             identifier={this.state.selectedTeamId}
+            url={url}
           />
         </div>
       )} else {
