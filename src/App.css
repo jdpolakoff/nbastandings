@@ -124,10 +124,10 @@ body {
   align-items: center;
   height: 5.2rem;
   left: 0;
-  max-width: 100%;
+  /* max-width: 100%; */
   right: 0;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 1;
 }
 
@@ -244,4 +244,14 @@ blockquote {
       width: 80%;
       margin: 0 auto
     }
+}
+
+@media only screen and (max-width: 1200px) {
+  .dropDownContainer {
+    left: 0;
+    max-width: 100%;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+  }
 }
