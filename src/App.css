@@ -4,8 +4,6 @@ body {
 
 .ReactTable {
   font-size: 20px;
-  margin-top: 5.2rem;
-
 }
 
 .rt-resizable-header-content {
@@ -27,10 +25,6 @@ body {
 
 #teams:hover {
   cursor: pointer
-}
-
-.team {
-  margin-top: 5.2rem;
 }
 
 .card {
@@ -61,7 +55,6 @@ body {
   height: 400px;
   width: 600px;
   text-align: center;
-  margin-top: 5.2rem;
   margin: auto;
 }
 
@@ -80,7 +73,6 @@ body {
   justify-content: space-around;
   text-align: center;
   margin: 0 auto;
-  margin-top: 5.5rem;
 }
 
 .matchup img {
@@ -133,7 +125,6 @@ body {
   height: 5.2rem;
   left: 0;
   max-width: 100%;
-  position: fixed;
   right: 0;
   top: 0;
   width: 100%;
@@ -234,5 +225,23 @@ blockquote {
     }
     .matchup h2 {
       font-size: 28px
+    }
+    .navigation {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      min-height: 150px
+    }
+    .dropDownContainer {
+      left: 0;
+      max-width: 100%;
+      right: 0;
+      /* top: 0; */
+      width: 100%;
+      z-index: 1;
+    }
+    #disqus_thread {
+      width: 80%;
+      margin: 0 auto
     }
 }
