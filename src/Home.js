@@ -20,6 +20,9 @@ class Home extends Component {
 
   handleClick(){
       $('.dropDownContainer').toggleClass('visible')
+      $('#teams b').text(function(i, v) {
+        return v === 'Teams ▼' ? 'Teams ▲' : 'Teams ▼'
+      })
   }
 
 
@@ -34,10 +37,10 @@ class Home extends Component {
     return (
         <div>
           <nav className="navigation">
-            <Link to='/'><span className="navItem">Home</span></Link>
-            <Link to='/easternconfstandings'><span className="navItem">Eastern Conference Standings</span></Link>
-            <Link to='/westernconfstandings'><span className="navItem">Western Conference Standings</span></Link>
-            <span className="navItem" id="teams" onClick={this.handleClick}>Teams
+            <Link to='/'><span className="navItem"><b>Home</b></span></Link>
+            <Link to='/easternconfstandings'><span className="navItem"><b>Eastern Conference Standings</b></span></Link>
+            <Link to='/westernconfstandings'><span className="navItem"><b>Western Conference Standings</b></span></Link>
+            <span className="navItem" onClick={this.handleClick} id="teams"><b>Teams ▼</b>
             <div className="dropDownContainer">
               {teamDivs}
             </div>

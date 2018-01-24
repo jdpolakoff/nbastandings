@@ -42,6 +42,7 @@ import {
 import Home from './Home'
 import TeamProfile from './TeamProfile'
 import BoxScore from './BoxScore'
+import Homepage from './Homepage'
 
 class App extends Component {
   constructor(){
@@ -489,7 +490,7 @@ class App extends Component {
             render={(props) => {
               return (
                 <div>
-                  <Home teams={this.state.teams} />
+                  <Homepage teams={this.state.teams}/>
                 </div>
               )
             }}
@@ -497,28 +498,40 @@ class App extends Component {
             <Route exact path='/easternconfstandings'
             render={(props) => {
               return (
+                <div>
+                <Home {...props} teams={this.state.teams} />
                 <EasternConf teams={this.state.teams} />
+                </div>
               )
             }}
             />
             <Route exact path='/westernconfstandings'
             render={(props) => {
               return (
+                <div>
+                <Home {...props} teams={this.state.teams} />
                 <WesternConf teams={this.state.teams} />
+                </div>
               )
             }}
             />
             <Route path='/teamprofile/:teamName'
             render={(props) => {
               return (
+                <div>
+                <Home {...props} teams={this.state.teams} />
                 <TeamProfile {...props} teams={this.state.teams}/>
+                </div>
               )
             }}
             />
             <Route path='/gameboxscore/:date/:gid'
             render={(props) => {
               return (
+                <div>
+                <Home {...props} teams={this.state.teams} />
                 <BoxScore {...props} teams={this.state.teams}/>
+                </div>
               )
             }}
             />
