@@ -102,7 +102,8 @@ body {
 }
 
 .navigation {
-  background: #f4f5f6;
+  /* background: #f4f5f6; */
+  background: black;
   border-bottom: .1rem solid #d1d1d1;
   display: flex;
   flex-direction: row;
@@ -118,6 +119,10 @@ body {
   z-index: 1;
 }
 
+.navigation span {
+  color: white
+}
+
 .dropDownContainer {
   width: 500px;
   height: 400px;
@@ -129,8 +134,6 @@ body {
   align-items: center;
   visibility: hidden;
   background: #f4f5f6;
-  border-left: .1rem solid #d1d1d1;
-  border-right: .1rem solid #d1d1d1;
   border-bottom: .1rem solid #d1d1d1;
   z-index: 1;
 }
@@ -145,11 +148,14 @@ body {
   justify-content: center;
   align-items: center;
   visibility: visible;
-  background: #f4f5f6;
-  border-left: .1rem solid #d1d1d1;
-  border-right: .1rem solid #d1d1d1;
+  background: black;
+  color: white;
   border-bottom: .1rem solid #d1d1d1;
   z-index: 1;
+}
+
+.visible div {
+  color: white
 }
 
 .navItem {

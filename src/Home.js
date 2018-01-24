@@ -14,13 +14,14 @@ class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
-      teamDivs: []
+      clicked: false
     }
   }
 
   handleClick(){
       $('.dropDownContainer').toggleClass('visible')
   }
+
 
   render() {
 
