@@ -203,6 +203,10 @@ blockquote {
   font-size: 36px
 }
 
+.typeWords2 {
+  display: none
+}
+
 @media only screen and (max-width: 700px) {
     .matchup, .synopsis {
         width: 95%;
@@ -253,5 +257,49 @@ blockquote {
     right: 0;
     width: 100%;
     z-index: 1;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .typeWords {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    margin: auto;
+  }
+  .bask {
+    height: 150px
+  }
+  .words {
+    font-size: 1px
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .typeWords {
+    display: none
+  }
+  .typeWords2 {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+  }
+  .bask {
+    height: 150px
+  }
+  .words {
+    font-size: 30px
   }
 }

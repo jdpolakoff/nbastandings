@@ -35,6 +35,11 @@ class Homepage extends Component {
             <img className="bask" src={Basket} />
             <h2 className="words"></h2>
           </div>
+          <div className="typeWords2">
+            <img className="bask" src={Basket} />
+            <h2 className="words2">Get NBA Playoff Standings.<br/>
+            Look Up Every Game of the NBA Season.<br/>Talk Smack.</h2>
+          </div>
         </div>
     );
   }
