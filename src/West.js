@@ -92,7 +92,7 @@ class WesternConf extends Component {
      accessor: 'winPct',
    },
    {
-     Header: 'Games Back',
+     Header: 'GB',
      accessor: 'gamesBehind',
    }
  ]
