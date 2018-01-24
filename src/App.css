@@ -110,16 +110,36 @@ body {
 .dropDownContainer {
   width: 500px;
   height: 400px;
-  border: 2px solid black;
   position: absolute;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 1%;
+  visibility: hidden;
+  background: #f4f5f6;
+  border-left: .1rem solid #d1d1d1;
+  border-right: .1rem solid #d1d1d1;
+  border-bottom: .1rem solid #d1d1d1;
+  z-index: 1;
 }
 
+.visible {
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  background: #f4f5f6;
+  border-left: .1rem solid #d1d1d1;
+  border-right: .1rem solid #d1d1d1;
+  border-bottom: .1rem solid #d1d1d1;
+  z-index: 1;
+}
 
 .navItem {
   display: inline;

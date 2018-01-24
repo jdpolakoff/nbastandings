@@ -14,7 +14,6 @@ import { ReactTableDefaults } from 'react-table'
 import moment from 'moment'
 import ReactDisqusComments from 'react-disqus-comments'
 
-
 Object.assign(ReactTableDefaults, {
   showPagination: false
 })

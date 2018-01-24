@@ -43,7 +43,6 @@ import Home from './Home'
 import TeamProfile from './TeamProfile'
 import BoxScore from './BoxScore'
 
-
 class App extends Component {
   constructor(){
     super()
@@ -489,7 +488,9 @@ class App extends Component {
             <Route exact path='/'
             render={(props) => {
               return (
-                <Home teams={this.state.teams} />
+                <div>
+                  <Home teams={this.state.teams} />
+                </div>
               )
             }}
             />
