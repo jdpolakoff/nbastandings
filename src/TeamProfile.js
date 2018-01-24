@@ -95,9 +95,9 @@ class TeamProfile extends Component {
               </div>
             </div>
           <ReactDisqusComments
-            shortname="smackboards"
+            shortname="nbasmack"
             title={this.props.match.params.teamName}
-            identifier={this.generateKey()}
+            identifier={this.state.selectedTeamId}
           />
         </div>
       )} else {
