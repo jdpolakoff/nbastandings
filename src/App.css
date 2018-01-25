@@ -220,7 +220,7 @@ blockquote {
 }
 
 @media only screen and (max-width: 800px) {
-    .matchup, .synopsis {
+    .matchup {
         width: 95%;
     }
     .matchup img {
@@ -271,6 +271,9 @@ blockquote {
       height: 100%;
       border-bottom-right-radius: 10px;
       border-bottom-left-radius: 10px
+    }
+    #ball {
+      height: 17px
     }
 }
 
