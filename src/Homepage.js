@@ -9,7 +9,7 @@ import {
 } from "react-router-dom"
 import $ from 'jquery'
 import Home from './Home'
-import typer from 'typer-js/typer'
+import typer from './typer-js/typer'
 import Basket from './images/bask.png'
 
 
