@@ -43,6 +43,7 @@ import Home from './Home'
 import TeamProfile from './TeamProfile'
 import BoxScore from './BoxScore'
 import Homepage from './Homepage'
+import Favicon from 'react-favicon'
 
 class App extends Component {
   constructor(){
@@ -485,6 +486,7 @@ class App extends Component {
 
     return (
         <div>
+        <Favicon url="./images/favicon.ico" />
           <Switch>
             <Route exact path='/'
             render={(props) => {

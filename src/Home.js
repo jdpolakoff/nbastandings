@@ -8,6 +8,7 @@ import {
   Switch
 } from "react-router-dom"
 import $ from 'jquery'
+import Ball from './images/ball.png'
 
 
 class Home extends Component {
@@ -37,7 +38,7 @@ class Home extends Component {
     return (
         <div>
           <nav className="navigation">
-            <Link to='/'><span className="navItem"><b>Home</b></span></Link>
+            <Link to='/'><span className="navItem"><img id="ball" src={Ball}/><b> Home</b></span></Link>
             <Link to='/easternconfstandings'><span className="navItem"><b>Eastern Conference Standings</b></span></Link>
             <Link to='/westernconfstandings'><span className="navItem"><b>Western Conference Standings</b></span></Link>
             <span className="navItem" onClick={this.handleClick} id="teams"><b>Teams ▼</b>

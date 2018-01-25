@@ -37,6 +37,11 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+#ball {
+  height: 13px;
+  border-radius: 3px
+}
+
 .gameInfo {
   margin-top: 21%
 }
@@ -86,6 +91,10 @@ body {
   text-align: center;
   width: 60%;
   margin: 0 auto
+}
+
+.synopsis2 {
+  display: none
 }
 
 .synopsis h2 {
@@ -220,8 +229,8 @@ blockquote {
     .matchup h2 {
       font-size: 1rem
     }
-    .synopsis h2 {
-      font-size: 18px
+    .synopsis2 h2 {
+      font-size: 22px
     }
     .typeWords {
       display: none
@@ -233,6 +242,14 @@ blockquote {
       text-align: center;
       margin-left: auto;
       margin-right: auto;
+    }
+    .synopsis {
+      display: none
+    }
+    .synopsis2 {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
     }
     .navigation b {
       font-size: 22px
@@ -267,6 +284,17 @@ blockquote {
     }
     .matchup h2 {
       font-size: 28px
+    }
+    .typeWords {
+      display: none
+    }
+    .typeWords2 {
+      display: block;
+      height: 400px;
+      width: 300px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
     .navigation {
       flex-direction: column;
