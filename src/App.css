@@ -149,6 +149,8 @@ body {
   background: #f4f5f6;
   border-bottom: .1rem solid #d1d1d1;
   z-index: 1;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .visible {
@@ -242,7 +244,7 @@ blockquote {
       text-align: start;
     }
     .conf {
-      font-size: 28px
+      font-size: 26px
     }
     .dropDownItem p {
       font-size: 20px
