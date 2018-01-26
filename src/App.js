@@ -486,7 +486,6 @@ class App extends Component {
 
     return (
         <div>
-        <Favicon url="../public/favicon.ico" />
           <Switch>
             <Route exact path='/'
             render={(props) => {
