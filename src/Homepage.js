@@ -22,9 +22,9 @@ class Homepage extends Component {
 
   componentDidMount(){
     typer('.words').line('Get NBA Playoff Standings &#10003;').pause(600).back('all')
-      .line('Look Up Every Game of the NBA Season &#10003;').pause(600)
-        .line('See who balled out. &#10003;').pause(600)
-        .back('all').line('Talk Smack &#10003;')
+      .line('Look Up Every Game of the NBA Season &#10003;').pause(600).back('all')
+        .line('See who balled out. &#10003;').pause(600).back('all')
+          .line('Talk Smack &#10003;')
   }
 
   render() {
