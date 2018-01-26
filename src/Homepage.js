@@ -23,6 +23,7 @@ class Homepage extends Component {
   componentDidMount(){
     typer('.words').line('Get NBA Playoff Standings &#10003;').pause(600).back('all')
       .line('Look Up Every Game of the NBA Season &#10003;').pause(600)
+        .line('See who balled out. &#10003;').pause(600)
         .back('all').line('Talk Smack &#10003;')
   }
 
@@ -38,7 +39,7 @@ class Homepage extends Component {
           <div className="typeWords2">
           <img className="bask" src={Basket} />
             <p className="words2">Get NBA Playoff Standings. &#10003;<br/>
-            Look Up Every Game of the NBA Season. &#10003;<br/>Talk Smack. &#10003;</p>
+            Look Up Every Game of the NBA Season. &#10003;<br/>See who balled out. &#10003;<br/>Talk Smack. &#10003;</p>
           </div>
         </div>
     );

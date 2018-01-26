@@ -208,6 +208,10 @@ blockquote {
   text-align: left
 }
 
+.playerStats {
+  margin: 0 auto;
+}
+
 .th {
   text-align: center
 }
