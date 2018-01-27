@@ -49,8 +49,10 @@ class BoxScore extends Component {
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
                   var first = guy.firstName
                   var realLast = guy.lastName
-                  var last = guy.lastName.split('.').join('')
-                  last = last.split("'").join('')
+                  var last = guy.lastName.split("''").join('')
+                  if (last.includes(' Jr.')){
+                    last = last.replace(' Jr.', '_jr')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
                   player['first'] = first
                   player['last'] = realLast
@@ -64,8 +66,10 @@ class BoxScore extends Component {
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
                   var first = guy.firstName
                   var realLast = guy.lastName
-                  var last = guy.lastName.split('.').join('')
-                  last = last.split("'").join('')
+                  var last = guy.lastName.split("''").join('')
+                  if (last.includes(' Jr.')){
+                    last = last.replace(' Jr.', '_jr')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
                   player['first'] = first
                   player['last'] = realLast
@@ -79,8 +83,10 @@ class BoxScore extends Component {
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
                   var first = guy.firstName
                   var realLast = guy.lastName
-                  var last = guy.lastName.split('.').join('')
-                  last = last.split("'").join('')
+                  var last = guy.lastName.split("''").join('')
+                  if (last.includes(' Jr.')){
+                    last = last.replace(' Jr.', '_jr')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
                   player['first'] = first
                   player['last'] = realLast
@@ -95,8 +101,10 @@ class BoxScore extends Component {
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
                   var first = guy.firstName
                   var realLast = guy.lastName
-                  var last = guy.lastName.split('.').join('')
-                  last = last.split("'").join('')
+                  var last = guy.lastName.split("''").join('')
+                  if (last.includes(' Jr.')){
+                    last = last.replace(' Jr.', '_jr')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
                   player['first'] = first
                   player['last'] = realLast
@@ -110,8 +118,10 @@ class BoxScore extends Component {
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
                   var first = guy.firstName
                   var realLast = guy.lastName
-                  var last = guy.lastName.split('.').join('')
-                  last = last.split("'").join('')
+                  var last = guy.lastName.split("''").join('')
+                  if (last.includes(' Jr.')){
+                    last = last.replace(' Jr.', '_jr')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
                   player['first'] = first
                   player['last'] = realLast
@@ -126,8 +136,10 @@ class BoxScore extends Component {
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
                   var first = guy.firstName
                   var realLast = guy.lastName
-                  var last = guy.lastName.split('.').join('')
-                  last = last.split("'").join('')
+                  var last = guy.lastName.split("''").join('')
+                  if (last.includes(' Jr.')){
+                    last = last.replace(' Jr.', '_jr')
+                  }  
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
                   player['first'] = first
                   player['last'] = realLast
@@ -185,6 +197,7 @@ class BoxScore extends Component {
       })
       var highHomeAssists = this.state.selectedGame.stats.hTeam.leaders.assists.value
       var homeAssists = this.state.selectedGame.stats.hTeam.leaders.assists.players.map(function(player){
+        console.log(player)
         return (
           <div>
             <img className="headshot" src={player.img}/>
