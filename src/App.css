@@ -168,7 +168,8 @@ body {
 }
 
 .headshot {
-  height: 70px;
+  max-height: 70px;
+  width: auto;
   display: block;
   margin-left: auto;
   margin-right: auto

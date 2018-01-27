@@ -47,14 +47,18 @@ class BoxScore extends Component {
             this.state.selectedGame.stats.hTeam.leaders.assists.players.forEach(function(player){
               players.forEach(function(guy){
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
-                  var first = guy.firstName
+                  var realFirst = guy.firstName
+                  var first = guy.firstName.split('.').join('')
                   var realLast = guy.lastName
                   var last = guy.lastName.split("''").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
                   }
+                  if (first.includes("'")){
+                    first = first.replace("'", '')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
-                  player['first'] = first
+                  player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
               }
@@ -64,14 +68,18 @@ class BoxScore extends Component {
             this.state.selectedGame.stats.vTeam.leaders.assists.players.forEach(function(player){
               players.forEach(function(guy){
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
-                  var first = guy.firstName
+                  var realFirst = guy.firstName
+                  var first = guy.firstName.split('.').join('')
                   var realLast = guy.lastName
                   var last = guy.lastName.split("''").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
                   }
+                  if (first.includes("'")){
+                    first = first.replace("'", '')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
-                  player['first'] = first
+                  player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
                 }
@@ -81,14 +89,18 @@ class BoxScore extends Component {
             this.state.selectedGame.stats.vTeam.leaders.points.players.forEach(function(player){
               players.forEach(function(guy){
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
-                  var first = guy.firstName
+                  var realFirst = guy.firstName
+                  var first = guy.firstName.split('.').join('')
                   var realLast = guy.lastName
                   var last = guy.lastName.split("''").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
                   }
+                  if (first.includes("'")){
+                    first = first.replace("'", '')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
-                  player['first'] = first
+                  player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
                 }
@@ -99,14 +111,18 @@ class BoxScore extends Component {
             this.state.selectedGame.stats.hTeam.leaders.points.players.forEach(function(player){
               players.forEach(function(guy){
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
-                  var first = guy.firstName
+                  var realFirst = guy.firstName
+                  var first = guy.firstName.split('.').join('')
                   var realLast = guy.lastName
                   var last = guy.lastName.split("''").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
                   }
+                  if (first.includes("'")){
+                    first = first.replace("'", '')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
-                  player['first'] = first
+                  player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
                 }
@@ -116,14 +132,18 @@ class BoxScore extends Component {
             this.state.selectedGame.stats.vTeam.leaders.rebounds.players.forEach(function(player){
               players.forEach(function(guy){
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
-                  var first = guy.firstName
+                  var realFirst = guy.firstName
+                  var first = guy.firstName.split('.').join('')
                   var realLast = guy.lastName
-                  var last = guy.lastName.split("''").join('')
+                  var last = guy.lastName.split("'").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
                   }
+                  if (first.includes("'")){
+                    first = first.replace("'", '')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
-                  player['first'] = first
+                  player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
                 }
@@ -134,14 +154,18 @@ class BoxScore extends Component {
             this.state.selectedGame.stats.hTeam.leaders.rebounds.players.forEach(function(player){
               players.forEach(function(guy){
                 if (parseInt(player.personId) === parseInt(guy.playerId)) {
-                  var first = guy.firstName
+                  var realFirst = guy.firstName
+                  var first = guy.firstName.split('.').join('')
                   var realLast = guy.lastName
                   var last = guy.lastName.split("''").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
-                  }  
+                  }
+                  if (first.includes("''")){
+                    first = first.replace("'", '')
+                  }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
-                  player['first'] = first
+                  player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
                 }
