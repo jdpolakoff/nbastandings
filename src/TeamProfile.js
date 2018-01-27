@@ -90,9 +90,7 @@ class TeamProfile extends Component {
            if (response.lscd[i].mscd.g[j].h.ta === selectedTeam[0].tricode || response.lscd[i].mscd.g[j].v.ta === selectedTeam[0].tricode) {
              arr.push(response.lscd[i].mscd.g[j])
              var filteredArr = arr.filter(function(game, index){
-               if (game.seasonStageId !== 1) {
                  return game.stt === 'Final'
-               }
              })
            }
          }

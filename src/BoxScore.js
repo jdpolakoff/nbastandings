@@ -54,6 +54,9 @@ class BoxScore extends Component {
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
                   }
+                  if (last.includes("'")){
+                    last = last.replace("'", '')
+                  }
                   if (first.includes("'")){
                     first = first.replace("'", '')
                   }
@@ -75,6 +78,9 @@ class BoxScore extends Component {
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
                   }
+                  if (last.includes("'")){
+                    last = last.replace("'", '')
+                  }
                   if (first.includes("'")){
                     first = first.replace("'", '')
                   }
@@ -95,6 +101,9 @@ class BoxScore extends Component {
                   var last = guy.lastName.split("''").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
+                  }
+                  if (last.includes("'")){
+                    last = last.replace("'", '')
                   }
                   if (first.includes("'")){
                     first = first.replace("'", '')
@@ -118,6 +127,9 @@ class BoxScore extends Component {
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
                   }
+                  if (last.includes("'")){
+                    last = last.replace("'", '')
+                  }
                   if (first.includes("'")){
                     first = first.replace("'", '')
                   }
@@ -138,6 +150,9 @@ class BoxScore extends Component {
                   var last = guy.lastName.split("'").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
+                  }
+                  if (last.includes("'")){
+                    last = last.replace("'", '')
                   }
                   if (first.includes("'")){
                     first = first.replace("'", '')
@@ -160,6 +175,9 @@ class BoxScore extends Component {
                   var last = guy.lastName.split("''").join('')
                   if (last.includes(' Jr.')){
                     last = last.replace(' Jr.', '_jr')
+                  }
+                  if (last.includes("'")){
+                    last = last.replace("'", '')
                   }
                   if (first.includes("''")){
                     first = first.replace("'", '')
