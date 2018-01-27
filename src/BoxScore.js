@@ -61,6 +61,8 @@ class BoxScore extends Component {
                     first = first.replace("'", '')
                   }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
+                  player['urlFirst'] = first
+                  player['urlLast'] = last
                   player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
@@ -85,6 +87,8 @@ class BoxScore extends Component {
                     first = first.replace("'", '')
                   }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
+                  player['urlFirst'] = first
+                  player['urlLast'] = last
                   player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
@@ -109,6 +113,8 @@ class BoxScore extends Component {
                     first = first.replace("'", '')
                   }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
+                  player['urlFirst'] = first
+                  player['urlLast'] = last
                   player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
@@ -134,6 +140,8 @@ class BoxScore extends Component {
                     first = first.replace("'", '')
                   }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
+                  player['urlFirst'] = first
+                  player['urlLast'] = last
                   player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
@@ -158,6 +166,8 @@ class BoxScore extends Component {
                     first = first.replace("'", '')
                   }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
+                  player['urlFirst'] = first
+                  player['urlLast'] = last
                   player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
@@ -183,6 +193,8 @@ class BoxScore extends Component {
                     first = first.replace("'", '')
                   }
                   var url = `https://nba-players.herokuapp.com/players/${last}/${first}`
+                  player['urlFirst'] = first
+                  player['urlLast'] = last
                   player['first'] = realFirst
                   player['last'] = realLast
                   player['img'] = url
@@ -220,62 +232,74 @@ class BoxScore extends Component {
       var highHomePoints = this.state.selectedGame.stats.hTeam.leaders.points.value
       var homePoints = this.state.selectedGame.stats.hTeam.leaders.points.players.map(function(player){
         return (
-          <div>
-            <img className="headshot" src={player.img}/>
-            <p className="playerDesc">{player.first} {player.last}<br/>
-               {highHomePoints} points</p>
-          </div>
+          <Link to={`/playerprofile/${player.urlLast}/${player.urlFirst}`}>
+            <div>
+              <img className="headshot" src={player.img}/>
+              <p className="playerDesc">{player.first} {player.last}<br/>
+                 {highHomePoints} points</p>
+            </div>
+          </Link>
         )
       })
       var highHomeRebounds = this.state.selectedGame.stats.hTeam.leaders.rebounds.value
       var homeRebounds = this.state.selectedGame.stats.hTeam.leaders.rebounds.players.map(function(player){
         return (
-          <div>
-            <img className="headshot" src={player.img}/>
-            <p className="playerDesc">{player.first} {player.last}<br/>
-               {highHomeRebounds} rebounds</p>
-          </div>
+          <Link to={`/playerprofile/${player.urlLast}/${player.urlFirst}`}>
+            <div>
+              <img className="headshot" src={player.img}/>
+              <p className="playerDesc">{player.first} {player.last}<br/>
+                 {highHomeRebounds} rebounds</p>
+            </div>
+          </Link>
         )
       })
       var highHomeAssists = this.state.selectedGame.stats.hTeam.leaders.assists.value
       var homeAssists = this.state.selectedGame.stats.hTeam.leaders.assists.players.map(function(player){
         console.log(player)
         return (
-          <div>
-            <img className="headshot" src={player.img}/>
-            <p className="playerDesc">{player.first} {player.last}<br/>
-               {highHomeAssists} assists</p>
-          </div>
+          <Link to={`/playerprofile/${player.urlLast}/${player.urlFirst}`}>
+            <div>
+              <img className="headshot" src={player.img}/>
+              <p className="playerDesc">{player.first} {player.last}<br/>
+                 {highHomeAssists} assists</p>
+            </div>
+          </Link>
         )
       })
       var highAwayPoints = this.state.selectedGame.stats.vTeam.leaders.points.value
       var awayPoints = this.state.selectedGame.stats.vTeam.leaders.points.players.map(function(player){
         return (
-          <div>
-            <img className="headshot" src={player.img}/>
-            <p className="playerDesc">{player.first} {player.last}<br/>
-               {highAwayPoints} points</p>
-          </div>
+          <Link to={`/playerprofile/${player.urlLast}/${player.urlFirst}`}>
+            <div>
+              <img className="headshot" src={player.img}/>
+              <p className="playerDesc">{player.first} {player.last}<br/>
+                 {highAwayPoints} points</p>
+            </div>
+          </Link>
         )
       })
       var highAwayRebounds = this.state.selectedGame.stats.vTeam.leaders.rebounds.value
       var awayRebounds = this.state.selectedGame.stats.vTeam.leaders.rebounds.players.map(function(player){
         return (
-          <div>
-            <img className="headshot" src={player.img}/>
-            <p className="playerDesc">{player.first} {player.last} <br/>
-            {highAwayRebounds} rebounds</p>
-          </div>
+          <Link to={`/playerprofile/${player.urlLast}/${player.urlFirst}`}>
+            <div>
+              <img className="headshot" src={player.img}/>
+              <p className="playerDesc">{player.first} {player.last} <br/>
+              {highAwayRebounds} rebounds</p>
+            </div>
+          </Link>
         )
       })
       var highAwayRebounds = this.state.selectedGame.stats.vTeam.leaders.assists.value
       var awayAssists = this.state.selectedGame.stats.vTeam.leaders.assists.players.map(function(player){
         return (
-          <div>
-            <img className="headshot" src={player.img}/>
-            <p className="playerDesc">{player.first} {player.last}<br/>
-               {highHomeRebounds} assists</p>
-          </div>
+          <Link to={`/playerprofile/${player.urlLast}/${player.urlFirst}`}>
+            <div>
+              <img className="headshot" src={player.img}/>
+              <p className="playerDesc">{player.first} {player.last}<br/>
+                 {highHomeRebounds} assists</p>
+            </div>
+          </Link>
         )
       })
       var uniqueId = this.state.selectedGame.basicGameData.gameId

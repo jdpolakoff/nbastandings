@@ -44,6 +44,7 @@ import TeamProfile from './TeamProfile'
 import BoxScore from './BoxScore'
 import Homepage from './Homepage'
 import Favicon from 'react-favicon'
+import PlayerProfile from './PlayerProfile'
 
 class App extends Component {
   constructor(){
@@ -3534,6 +3535,16 @@ class App extends Component {
                 <div>
                 <Home {...props} teams={this.state.teams} />
                 <BoxScore {...props} teams={this.state.teams} players={this.state.players}/>
+                </div>
+              )
+            }}
+            />
+            <Route path='/playerprofile/:last/:first'
+            render={(props) => {
+              return (
+                <div>
+                <Home {...props} teams={this.state.teams} />
+                <PlayerProfile {...props} teams={this.state.teams} players={this.state.players}/>
                 </div>
               )
             }}

@@ -175,6 +175,30 @@ body {
   margin-right: auto
 }
 
+.playerStats {
+  max-width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.playerProf {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+
+.profileHeader {
+  display: block;
+  margin: 0 auto;
+}
+
+.profileHeader img {
+  display: block;
+  margin: 0 auto
+}
+
 .td p {
   text-align: center;
 }
@@ -207,10 +231,6 @@ body {
 
 blockquote {
   text-align: left
-}
-
-.playerStats {
-  margin: 0 auto;
 }
 
 .th {

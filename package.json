@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "bulma": "^0.6.2",
     "bulma-start": "0.0.2",
     "datejs": "^1.0.0-rc3",
