@@ -313,19 +313,19 @@ class BoxScore extends Component {
           <img className="matchupLogo" src={this.state.awayTeam.img} />
           <h1>{this.state.selectedGame.basicGameData.vTeam.score}</h1>
           <h3>Team Leaders</h3>
-          <table className="playerStats">
+          <table>
             <thead>
               <tr>
-              <th className="th">Points</th>
-              <th className="th">Rebounds</th>
-              <th className="th">Assists</th>
+                <th className="th">Points</th>
+                <th className="th">Rebounds</th>
+                <th className="th">Assists</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-              <td>{awayPoints}</td>
-              <td>{awayRebounds}</td>
-              <td>{awayAssists}</td>
+                <td>{awayPoints}</td>
+                <td>{awayRebounds}</td>
+                <td>{awayAssists}</td>
               </tr>
             </tbody>
           </table>
@@ -335,7 +335,7 @@ class BoxScore extends Component {
           <img className="matchupLogo" src={this.state.homeTeam.img} />
           <h1>{this.state.selectedGame.basicGameData.hTeam.score}</h1>
           <h3>Team Leaders</h3>
-          <table className="playerStats">
+          <table>
             <thead>
               <tr>
               <th className="th">Points</th>
