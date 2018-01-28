@@ -14,6 +14,7 @@ import Basket from './images/bask.png'
 import axios from 'axios'
 import ReactTable from 'react-table'
 import { ReactTableDefaults } from 'react-table'
+import ReactDisqusComments from 'react-disqus-comments'
 
 Object.assign(ReactTableDefaults, {
   showPagination: false,
@@ -29,6 +30,7 @@ class PlayerProfile extends Component {
   }
 
   componentDidMount(){
+    console.log(this.props)
     var url = `https://nba-players.herokuapp.com/players-stats/${this.props.match.params.last}/${this.props.match.params.first}`
     axios.get(url)
       .then((response)=>{
@@ -40,6 +42,11 @@ class PlayerProfile extends Component {
 
   render() {
     if (!$.isEmptyObject(this.state.player)){
+
+      var url = `https://smackboards.herokuapp.com/${this.props.match.params.last}/${this.props.match.params.first}`
+      var player = this.state.player.name
+      var identifier = this.state.player.name
+
         const data = [this.state.player]
         const columns = [
         {
@@ -112,6 +119,12 @@ class PlayerProfile extends Component {
               columns={columns2}
               defaultPageSize={1}
               className="-striped -highlight"
+            />
+            <ReactDisqusComments
+              shortname="nbasmack"
+              title={player}
+              identifier={identifier}
+              url={url}
             />
           </div>
         </div>
