@@ -156,7 +156,10 @@ body {
 
 .masonryGrid{
   margin-right: 5px;
-  margin-left: 5px
+  margin-left: 5px;
+  padding-left: 2px;
+  padding-right: 2px
+
 }
 
 .masonryContainer{
@@ -166,6 +169,16 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center
+}
+
+#lastNameField {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form {
+  width: 100%;
+  display: block;
 }
 
 .dropDownContainer {
