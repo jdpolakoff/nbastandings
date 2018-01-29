@@ -45,7 +45,7 @@ class PlayerProfile extends Component {
   render() {
     if (!$.isEmptyObject(this.state.player)){
 
-      var url = `https://smackboards.herokuapp.com/${this.props.match.params.last}/${this.props.match.params.first}`
+      var url = `https://smackboards.herokuapp.com/playerprofile/${this.props.match.params.last}/${this.props.match.params.first}`
       var player = this.state.player.name
       var identifier = this.state.player.name
 
