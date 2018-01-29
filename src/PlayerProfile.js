@@ -15,6 +15,8 @@ import axios from 'axios'
 import ReactTable from 'react-table'
 import { ReactTableDefaults } from 'react-table'
 import ReactDisqusComments from 'react-disqus-comments'
+import blank from './images/blank.png'
+import ReactImageFallback from 'react-image-fallback'
 
 Object.assign(ReactTableDefaults, {
   showPagination: false,
@@ -105,7 +107,7 @@ class PlayerProfile extends Component {
       return (
         <div className="playerProf">
           <div className="profileHeader">
-            <img src={`https://nba-players.herokuapp.com/players/${this.props.match.params.last}/${this.props.match.params.first}`} />
+            <ReactImageFallback src={`https://nba-players.herokuapp.com/players/${this.props.match.params.last}/${this.props.match.params.first}`} fallbackImage={blank} />
             <h2>{this.state.player.name} 2017-2018 Stats</h2>
             <h3>{this.state.player.team_name}</h3>
             <ReactTable

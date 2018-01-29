@@ -32,6 +32,9 @@ import thunder from './images/thunder.jpg'
 import twolves from './images/twolves.jpg'
 import warriors from './images/warriors.jpg'
 import wizards from './images/wizards.jpg'
+import blank from './images/blank.png'
+import $ from 'jquery'
+
 import {
   BrowserRouter,
   Route,
@@ -45,17 +48,21 @@ import BoxScore from './BoxScore'
 import Homepage from './Homepage'
 import Favicon from 'react-favicon'
 import PlayerProfile from './PlayerProfile'
+import PlayerMash from './PlayerMash'
+import axios from 'axios'
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
       teams: [],
-      players: []
+      players: [],
+      hasPic: true
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
+
     var allPlayers =
 [
   {
@@ -3053,6 +3060,26 @@ class App extends Component {
     "teamId": 1610612747
   }
 ]
+    allPlayers.forEach(function(player){
+      var urlF = player.firstName.split('.').join('')
+      if (urlF.includes("'")){
+        urlF = urlF.replace("'", '')
+      }
+      var urlL = player.lastName.split("'").join('')
+      if (urlL.includes(' Jr.')){
+        urlL = urlL.replace(' Jr.', '_jr')
+      }
+      urlL = urlL.split(' ').join('')
+      if (urlL.includes("'")){
+        urlL = urlL.replace("'", '')
+      }
+      if (player.firstName === 'Matt' && player.lastName === 'Williams Jr.'){
+        urlL = 'Williams'
+      }
+      player['urlL'] = urlL
+      player['urlF'] = urlF
+      player['image'] = `https://nba-players.herokuapp.com/players/${urlL}/${urlF}`
+    })
 
     var allTeams =
       [
@@ -3477,12 +3504,9 @@ class App extends Component {
       "divName": "Southeast"
     }
   ]
-    this.setState({teams: allTeams}, function(){
-      console.log(this.state.teams)
-    })
-    this.setState({players: allPlayers}, function(){
-      console.log(this.state.players)
-    })
+
+    this.setState({teams: allTeams})
+    this.setState({players: allPlayers})
   }
 
   render() {
@@ -3545,6 +3569,16 @@ class App extends Component {
                 <div>
                 <Home {...props} teams={this.state.teams} />
                 <PlayerProfile {...props} teams={this.state.teams} players={this.state.players}/>
+                </div>
+              )
+            }}
+            />
+            <Route path='/playermash'
+            render={(props) => {
+              return (
+                <div>
+                <Home {...props} teams={this.state.teams} />
+                <PlayerMash {...props} teams={this.state.teams} players={this.state.players}/>
                 </div>
               )
             }}

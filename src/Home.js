@@ -41,6 +41,7 @@ class Home extends Component {
             <Link to='/'><span className="navItem"><img id="ball" src={Ball}/><b> Home</b></span></Link>
             <Link to='/easternconfstandings'><span className="navItem"><b>Eastern Conference Standings</b></span></Link>
             <Link to='/westernconfstandings'><span className="navItem"><b>Western Conference Standings</b></span></Link>
+            <Link to='/playermash'><span className="navItem"><b>Browse Players</b></span></Link>
             <span className="navItem" onClick={this.handleClick} id="teams"><b>Teams ▼</b>
             <div className="dropDownContainer">
               {teamDivs}

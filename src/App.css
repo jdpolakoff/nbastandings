@@ -137,7 +137,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  height: 5.2rem;
+  min-height: 5.2rem;
   left: 0;
   /* max-width: 100%; */
   right: 0;
@@ -148,6 +148,23 @@ body {
 
 .navigation span {
   color: white
+}
+
+.masonryPlayer {
+  max-height: 100px
+}
+
+.masonryGrid{
+  margin-right: 5px;
+  margin-left: 5px
+}
+
+.masonryContainer{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .dropDownContainer {
@@ -312,6 +329,9 @@ blockquote {
     }
     #ball {
       height: 17px
+    }
+    .masonryPlayer {
+      max-height: 65px
     }
 }
 
