@@ -11,7 +11,8 @@ import $ from 'jquery'
 import Ball from './images/ball.png'
 import axios from 'axios'
 import blank from './images/blank.png'
-import ReactImageFallback from "react-image-fallback";
+import ReactImageFallback from "react-image-fallback"
+import loading from './images/loading.gif'
 
 
 
@@ -26,7 +27,7 @@ class PlayerMash extends Component {
       return (
         <Link to={`/playerprofile/${player.urlL}/${player.urlF}`}>
         <div className="masonryGrid card">
-          <ReactImageFallback className="masonryPlayer" src={player.image} fallbackImage={blank} />
+          <ReactImageFallback className="masonryPlayer" src={player.image} fallbackImage={blank} initialImage={loading} />
           <p>{player.firstName} {player.lastName}</p>
         </div>
         </Link>
