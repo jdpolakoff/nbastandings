@@ -50,24 +50,53 @@ class PlayerMash extends Component {
       }
     })
 
+
     if (this.state.search !== ''){
       var players = filteredPlayers.map(function(player){
+        var colorString = player.colors + ""
+        console.log(player.colors)
+        var style = {
+          card2: {
+            background: `linear-gradient(${colorString})`,
+            marginLeft: '2px',
+            marginRight: '2px',
+            marginTop: '10px',
+            paddingTop: '4px',
+            paddingBottom: '4px'
+          }
+        }
         return (
           <Link to={`/playerprofile/${player.urlL}/${player.urlF}`}>
-          <div className="masonryGrid card">
-          <ReactImageFallback className="masonryPlayer" src={player.image} fallbackImage={blank} initialImage={loading} />
-          <p>{player.firstName} {player.lastName}<br/>{player.team}</p>
+          <div className="box" style={style.card2} >
+            <div className="masonryGrid card">
+              <ReactImageFallback className="masonryPlayer" src={player.image} fallbackImage={blank} initialImage={loading} />
+              <p>{player.firstName} {player.lastName}<br/>{player.team}</p>
+          </div>
           </div>
           </Link>
         )
       })
     } else {
       var players = filteredTeamPlayers.map(function(player){
+        var colorString = player.colors + ""
+        console.log(player.colors)
+        var style = {
+          card2: {
+            background: `linear-gradient(${colorString})`,
+            marginLeft: '2px',
+            marginRight: '2px',
+            marginTop: '10px',
+            paddingTop: '4px',
+            paddingBottom: '4px'
+          }
+        }
         return (
           <Link to={`/playerprofile/${player.urlL}/${player.urlF}`}>
-          <div className="masonryGrid card">
-          <ReactImageFallback className="masonryPlayer" src={player.image} fallbackImage={blank} initialImage={loading} />
-          <p>{player.firstName} {player.lastName}<br/>{player.team}</p>
+            <div className="box" style={style.card2}>
+              <div className="masonryGrid card">
+                <ReactImageFallback className="masonryPlayer" src={player.image} fallbackImage={blank} initialImage={loading} />
+                <p>{player.firstName} {player.lastName}<br/>{player.team}</p>
+              </div>
           </div>
           </Link>
         )

@@ -34,7 +34,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
 }
 
 #ball {
@@ -133,7 +133,7 @@ body {
 }
 
 .navigation {
-  /* background: #f4f5f6; */
+  background: #f4f5f6;
   background: black;
   border-bottom: .1rem solid #d1d1d1;
   display: flex;
@@ -142,7 +142,7 @@ body {
   align-items: center;
   min-height: 5.2rem;
   left: 0;
-  /* max-width: 100%; */
+  max-width: 100%;
   right: 0;
   top: 0;
   width: 100vw;
@@ -154,15 +154,20 @@ body {
 }
 
 .masonryPlayer {
-  max-height: 100px
+  max-height: 150px
 }
 
 .masonryGrid{
   margin-right: 5px;
   margin-left: 5px;
   padding-left: 2px;
-  padding-right: 2px
+  padding-right: 2px;
+  background-color: #fff;
+}
 
+.box {
+  display: flex;
+  justify-content: center;
 }
 
 .masonryContainer{
@@ -392,7 +397,7 @@ blockquote {
       left: 0;
       max-width: 100%;
       right: 0;
-      /* top: 0; */
+      top: 0;
       width: 100%;
       z-index: 1;
     }
