@@ -171,7 +171,7 @@ body {
   justify-content: center
 }
 
-#lastNameField {
+#lastNameField, #teamField {
   width: 60%;
   margin: 0 auto;
 }
